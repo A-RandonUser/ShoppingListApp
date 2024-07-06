@@ -24,10 +24,11 @@ class LocationViewModel :ViewModel(){
         try{
 
             viewModelScope.launch {
-                val result = RetrofitClient.create().getAdressFromCoordinates(latlng,"AIzaSyDHGVtylTDARohfCAYz0QQ-OYR3psZXIp0")
+                val result = RetrofitClient.create().getAdressFromCoordinates(latlng,"")
                 _address.value = result.results
             }
 
+            //the api AIzaSyDHGVtylTDARohfCAYz0QQ-OYR3psZXIp0
 
         }catch(e:Exception){
             Log.d("res1", "${e.cause} ${e.message}")
